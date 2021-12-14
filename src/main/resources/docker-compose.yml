@@ -1,0 +1,14 @@
+version: "3"
+services:
+  techiemastermogodb:
+    image: mongo:4.0.27
+    container_name: "techiemastermogodb"
+    ports:
+      - 27017:27017
+  spring-boot-mongodb-docker:
+    image: spring-boot-mongodb-docker:1.0
+    container_name: spring-boot-mongodb-docker
+    ports:
+      - 8281:8281
+    links:
+      - techiemastermogodb
